@@ -1,7 +1,8 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
-{% load static %}
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,39 +18,29 @@
   </head>
   <body>
     <header>
-      <img class="vin" src="img/vinyl.png" />
+      <img class="vin" src="{% static 'img/vinyl.png' %}" />
       <h1>crates</h1>
     </header>
 
     <div class="container">
+
+      {% for album in albums %}
       <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/en/1/15/Mac_Miller_-_Circles.png" alt="Image <%= data[i].id %>" />        
+        <img src="{{album.image}}.jpg" alt="Image {{ album.id}}" />        
         <div class="card-text">
           <div class="card-head">
-            <p class="card-text">Circles</p>
+            <p class="card-text">{{album.name}}</p>
             <div class="star-group">
-              <img class="star fill" alt="star" src="img/star-line.svg" />
+              {% for i in "x"|rjust:"5" %}
+                <img class="star fill" alt="star" src="{% static 'img/star-line.svg' %}" />
+              {% endfor %}
             </div>
           </div>
-          <p class="sub">Mac Miller</p>
+          <p class="sub">{{ album.artist }}</p>
         </div>
       </div>
-     {% comment %} {% for i in len(data) %}
-      <div class="card">
-        <img src="/img/albumCovers/<%= data[i].image %>.jpeg" alt="Image <%= data[i].id %>" />        
-        <div class="card-text">
-          <div class="card-head">
-            <p class="card-text"><%= data[i].name %></p>
-            <div class="star-group">
-              <% for (let j = 0; j < data[i].rating; j++) {%>
-              <img class="star fill" alt="star" src="img/star-line.svg" />
-              <% } %>
-            </div>
-          </div>
-          <p class="sub"><%= data[i].artist %></p>
-        </div>
-      </div>
-      <% } %> {% endcomment %}
+      {% endfor %}
     </div>
+    
   </body>
 </html>
