@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/core.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <title>Favorite Albums</title>
+  </head>
+  <body>
+    <header>
+      <img class="vin" src="img/vinyl.png" />
+      <h1>crates</h1>
+    </header>
+
+    <div class="container">
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/1/15/Mac_Miller_-_Circles.png" alt="Image <%= data[i].id %>" />        
+        <div class="card-text">
+          <div class="card-head">
+            <p class="card-text">Circles</p>
+            <div class="star-group">
+              <img class="star fill" alt="star" src="img/star-line.svg" />
+            </div>
+          </div>
+          <p class="sub">Mac Miller</p>
+        </div>
+      </div>
+     {% comment %} {% for i in len(data) %}
+      <div class="card">
+        <img src="/img/albumCovers/<%= data[i].image %>.jpeg" alt="Image <%= data[i].id %>" />        
+        <div class="card-text">
+          <div class="card-head">
+            <p class="card-text"><%= data[i].name %></p>
+            <div class="star-group">
+              <% for (let j = 0; j < data[i].rating; j++) {%>
+              <img class="star fill" alt="star" src="img/star-line.svg" />
+              <% } %>
+            </div>
+          </div>
+          <p class="sub"><%= data[i].artist %></p>
+        </div>
+      </div>
+      <% } %> {% endcomment %}
+    </div>
+  </body>
+</html>

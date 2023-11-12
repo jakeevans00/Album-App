@@ -1,0 +1,82 @@
+body {
+  font-family: "Gabarito", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+header {
+  background-color: #dcbfae;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+h1 {
+  display: inline;
+  padding-left: 15px;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+.vin {
+  display: inline;
+}
+
+.card {
+  background-color: #e0cdbd;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 10px;
+  width: 300px;
+  box-shadow: 0 2px 8px rgb(156, 153, 149);
+}
+
+.card:hover {
+  transform: translateX(10px);
+  transform: scale(102%);
+  transition: 300ms ease-in-out;
+}
+
+.card img {
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.card-text {
+  display: inline;
+  color: rgb(68, 35, 5);
+  padding: 0 15px 0 15px;
+  font-size: 1.25rem;
+}
+
+.sub {
+  font-size: 1rem;
+  padding-left: 15px;
+  color: grey;
+}
+
+.star {
+  display: inline;
+  max-width: 20px;
+  max-height: 20px;
+}
+
+.fill {
+  filter: hue-rotate(40%);
+}
+
+.card-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.star-group {
+  padding: 0 15px 0 15px;
+}
