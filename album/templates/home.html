@@ -25,45 +25,11 @@
     <div class="container">
 
       <p>
-        pedro
-sanchez
-president
-summer
-reach
-stars
-lafawnduh
-totally
-sweet
-class
-elections
-vote
-happy
-hands
-club
-friends
-fun
-skill
-snacks
-community
-service
-music
-join
-now
-preston
-high
-sign
-language
-idaho
-cougar
-pride
-school
-cougars
-tater
-tots
+
       </p>
-      {% comment %} {% for album in albums %}
+     {% for album in albums %}
       <div class="card">
-        <img src="{{album.image}}.jpg" alt="Image {{ album.id}}" />        
+        <img src="{{album.image}}" alt="Image {{ album.id}}" />        
         <div class="card-text">
           <div class="card-head">
             <p class="card-text">{{album.name}}</p>
@@ -76,7 +42,7 @@ tots
           <p class="sub">{{ album.artist }}</p>
         </div>
       </div>
-      {% endfor %} {% endcomment %}
+      {% endfor %}
     </div>
     
   </body>
